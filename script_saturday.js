@@ -104,7 +104,7 @@ x.onended = function(){
   var delay = setTimeout(function(){
     x.play();
     clearTimeout(delay);
-  }, 10000);
+  }, 8000);
 }
     startButton.onclick = function() {
     if(position==0 && started == false){
