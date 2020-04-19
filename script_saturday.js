@@ -9,33 +9,80 @@ window.onload = function() {
   var x = document.getElementById("myAudio"); 
   var y = document.getElementById("beep"); 
     var started = false;
-    var breakTime = 60;
-    var list = ["Jump Squats",
-"Star Fish",
-"Side Hops",
-"Burpees",
-"Tuck Jump"];
+    var breakTime = 10;
+    var list = ["Jump Squats","Jump Squats","Jump Squats","Jump Squats","Jump Squats","Jump Squats","Jump Squats","Jump Squats",
+"Star Fish","Star Fish","Star Fish","Star Fish",
+"Star Fish","Star Fish","Star Fish","Star Fish",
+"Side Hops","Side Hops","Side Hops","Side Hops","Side Hops","Side Hops","Side Hops","Side Hops",
+"Burpees","Burpees","Burpees","Burpees","Burpees","Burpees","Burpees","Burpees",
+"Tuck Jump","Tuck Jump","Tuck Jump","Tuck Jump","Tuck Jump","Tuck Jump","Tuck Jump","Tuck Jump",];
     var wList = ["1. Jump Squats",
 "<br>2. Star Fish",
 "<br>3. Side Hops",
 "<br>4. Burpees",
 "<br>5. Tuck Jump"];  
-    var dList = [240,
-240,
-240,
-240,
-240];
-    var restList = [1,
+    var dList = [20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20,
+20];
+    var restList = [1,1,1,1,
 1,
+1,
+1,
+1,1,1,1,1,
+1,
+1,
+1,
+1,1,1,1,1,
+1,
+1,
+1,
+1,1,1,1,1,
 1,
 1,
 1,
 1];
-    var links = ["workouts//jump_squat.gif",
-    "workouts//starfish.gif",
-    "workouts//sidetoside.gif",
-    "workouts//Burpees.gif",
-    "workouts//tuck_jump.gif",
+    var links = ["workouts//jump_squat.gif","workouts//jump_squat.gif","workouts//jump_squat.gif","workouts//jump_squat.gif","workouts//jump_squat.gif","workouts//jump_squat.gif","workouts//jump_squat.gif","workouts//jump_squat.gif",
+    "workouts//starfish.gif","workouts//starfish.gif","workouts//starfish.gif","workouts//starfish.gif", "workouts//starfish.gif","workouts//starfish.gif","workouts//starfish.gif","workouts//starfish.gif",
+    "workouts//sidetoside.gif","workouts//sidetoside.gif","workouts//sidetoside.gif","workouts//sidetoside.gif", "workouts//sidetoside.gif","workouts//sidetoside.gif","workouts//sidetoside.gif","workouts//sidetoside.gif",
+    "workouts//Burpees.gif","workouts//Burpees.gif","workouts//Burpees.gif","workouts//Burpees.gif", "workouts//Burpees.gif","workouts//Burpees.gif","workouts//Burpees.gif","workouts//Burpees.gif",
+    "workouts//tuck_jump.gif","workouts//tuck_jump.gif","workouts//tuck_jump.gif","workouts//tuck_jump.gif", "workouts//tuck_jump.gif","workouts//tuck_jump.gif","workouts//tuck_jump.gif","workouts//tuck_jump.gif",
                 ];
   
     var linkSRC = document.getElementById("help");
@@ -166,7 +213,7 @@ var restDone = 0;
   function theEnd() {
   console.log("hi");
     clearInterval(interval); 
-    var completed = wList.slice(0,position+1);
+    var completed = wList.slice(0,position/8+1);
     var compString = completed.join(' ');
     workList.innerHTML = compString;
     
