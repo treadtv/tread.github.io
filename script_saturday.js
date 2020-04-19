@@ -99,7 +99,13 @@ window.onload = function() {
   
     var statusHeader = document.getElementById("status");
     var secondsSpan = document.getElementById("sec");
-  
+x.onended = function(){
+    this.currentTime = 0;
+  var delay = setTimeout(function(){
+    x.play();
+    clearTimeout(delay);
+  }, 10000);
+}
     startButton.onclick = function() {
     if(position==0 && started == false){
         started = true;
