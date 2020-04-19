@@ -128,15 +128,24 @@ window.onload = function() {
       clearInterval(interval);
     }
     
+var minute,second;
     function countdownSeconds() {
-      //console.log("countdown",seconds,rest,clicked,rPosition);
-      seconds -= 1;
-      secondsSpan.innerText = seconds;
-      if (seconds <= 5){
+        minute = parseInt(seconds / 60, 10);
+        second = parseInt(seconds % 60, 10);
+
+        minute = minute < 10 ? "0" + minute : minute;
+        second = second < 10 ? "0" + second : second;
+
+        secondsSpan.textContent = minute + ":" + second;
+
+        if (--seconds < 0) {
+            seconds = duration;
+        }
+          if (seconds <= 5){
           y.play();
       }
-      checkForStateChange();
-    }
+      checkForStateChange();}
+
       
   
     function checkForStateChange() {
@@ -146,12 +155,12 @@ window.onload = function() {
         if (restList[rPosition] == 1){
             console.log("yolo in here now");
             rest = true;
-            seconds = breakTime+1;
+            seconds = breakTime;
             rPosition = rPosition +1;
             changeToRest();}
         if(rest==false){
         position = position+1;
-        seconds = dList[position]+1;
+        seconds = dList[position];
         changeToGo(); 
         rPosition = rPosition +1;}
         }
@@ -160,7 +169,7 @@ window.onload = function() {
          console.log("Hi");
           rest = false;
           position = position + 1;
-          seconds = dList[position]+1;
+          seconds = dList[position];
           changeToGo();
       }
     }
